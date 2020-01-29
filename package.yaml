@@ -1,0 +1,76 @@
+name:                purescheme-wai-routing-core
+version:             0.1.0.0
+github:              "purescheme/purescheme-wai-routing-core"
+license:             Apache-2.0
+author:              "Fernando Rincon Martin"
+maintainer:          "f.rincon@protonmail.com"
+copyright:           "2020 Fernando Rincon Martin"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+synopsis:            Simple Routing functions for Wai Applications
+category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/purescheme/purescheme-wai-routing-core#readme>
+
+flags:
+  development:
+    description: Used while development
+    default: False
+    manual: True
+
+when:
+- condition: flag(development)
+  dependencies:
+  - placeholders
+
+ghc-options:
+- -Wall
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  dependencies:
+  - aeson
+  - bytestring
+  - http-media
+  - http-types
+  - interpolate
+  - text
+  - wai
+
+executables:
+  simple-routing-core-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - aeson
+    - bytestring
+    - http-types
+    - purescheme-wai-routing-core
+    - text
+    - wai
+    - warp
+
+tests:
+  simple-routing-core-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - purescheme-wai-routing-core
