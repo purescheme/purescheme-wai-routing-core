@@ -19,7 +19,7 @@ import Network.Wai.Handler.Warp (run)
 import Network.Wai (responseLBS, Application)
 
 main :: IO ()
-main = run 8080 $ api
+main = run 8080 api
 
 api :: Application
 api = path "hello"
