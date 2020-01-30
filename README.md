@@ -57,12 +57,12 @@ There are many routing frameworks for Haskell but they usually are:
 - Some of them are not using the type system properly
 
 So, as Haskell is totally functional, and, based on the simplicity of an Wai `Application` (which is basically
-a function that converts requests to responses, why not create functions on top of Wai `Application` that 
+a function that converts requests to responses), why not create functions on top of Wai `Application` that 
 provides a functional way to implement RESTful APIs?
 
 ## Status
-Currently the API is totally functionalm but the status is considered Alpha. That means, the whole API can change
-in further release until we reach the beta status.
+Currently the API is totally functional but the status is considered Alpha. That means, the API can change
+in further release until it reachs the beta status.
 
 ## Feedback are welcome!
-Please, if you feel that some functionallity is missing or something can be improve, post a issue!
+Please, if you feel that some functionallity is missing or something can be improve, post an [issue](https://github.com/purescheme/purescheme-wai-routing-core/issues) or contact the author.
