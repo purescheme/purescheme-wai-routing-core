@@ -29,3 +29,37 @@ api = path "hello"
             $ responseLBS status200 [(hContentType, "text/html")] "<h1>Hellow World!</h1>"
 
 ```
+
+## Overview
+
+This module provides simple routing functions that works on top of "Network.Wai"
+applications.
+ 
+The basic idea is provides functions that modifies an @"Application" in order to match
+certain rules. It is inspired on akka http server Routing DSL.
+
+## User Guide
+The API is divided in several modules by its functionality:
+- `Network.Wai.Routing.Purescheme.Core.Basic` provides the basic types and functionality including how to complete a request and exception handling.
+- `Network.Wai.Routing.Purescheme.Core.Path` routing functions that matches with the Path of the URI.
+- `Network.Wai.Routing.Purescheme.Core.Query` routing functions to extract parameters from the query part of the URI.
+- `Network.Wai.Routing.Purescheme.Core.Method` routing functions based on http method.
+- `Network.Wai.Routing.Purescheme.Core.Entity` routing and manipulation API related with Entity in the request and the response. Useful for content negotiation and serialization of entities.
+- `Network.Wai.Routing.Purescheme.Core.Entity.Json` concrete functions to operate on JSON encoding entities based on Aeson library.
+
+
+## Why
+There are many routing frameworks for Haskell but they usually are:
+- They come with their own Monads or exoteric strategics to build routes.
+- Some of them are not using the type system properly
+
+So, as Haskell is totally functional, and, based on the simplicity of an Wai `Application` (which is basically
+a function that converts requests to responses, why not create functions on top of Wai `Application` that 
+provides a functional way to implement RESTful APIs?
+
+## Status
+Currently the API is totally functionalm but the status is considered Alpha. That means, the whole API can change
+in further release until we reach the beta status.
+
+## Feedback are welcome!
+Please, if you feel that some functionallity is missing or something can be improve, post a issue!
