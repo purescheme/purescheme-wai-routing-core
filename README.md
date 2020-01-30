@@ -39,6 +39,7 @@ The basic idea is provides functions that modifies an @"Application" in order to
 certain rules. It is inspired on akka http server Routing DSL.
 
 ## User Guide
+
 The API is divided in several modules by its functionality:
 - `Network.Wai.Routing.Purescheme.Core.Basic` provides the basic types and functionality including how to complete a request and exception handling.
 - `Network.Wai.Routing.Purescheme.Core.Path` routing functions that matches with the Path of the URI.
@@ -47,6 +48,7 @@ The API is divided in several modules by its functionality:
 - `Network.Wai.Routing.Purescheme.Core.Entity` routing and manipulation API related with Entity in the request and the response. Useful for content negotiation and serialization of entities.
 - `Network.Wai.Routing.Purescheme.Core.Entity.Json` concrete functions to operate on JSON encoding entities based on Aeson library.
 
+A complete example can be found in the [app](https://github.com/purescheme/purescheme-wai-routing-core/tree/master/app) folder.
 
 ## Why
 There are many routing frameworks for Haskell but they usually are:
