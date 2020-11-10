@@ -41,6 +41,7 @@ library:
   dependencies:
   - aeson
   - bytestring
+  - case-insensitive
   - http-media
   - http-types
   - interpolate
