@@ -16,6 +16,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Network.Wai.Routing.Purescheme.Core.Header
   ( headerValue
+  , headerValue'
   )
 where
   
@@ -23,12 +24,17 @@ import Network.Wai.Routing.Purescheme.Core.Basic
 
 import Data.ByteString (ByteString)
 import qualified Data.CaseInsensitive as CI
+import Network.HTTP.Types.Header (HeaderName)
 import Network.Wai (requestHeaders)
 
--- | Extract the value of the first HTTP request header with a given name
+-- | Extract the value of the first HTTP request header with a given name (ByteString)
 headerValue :: ByteString -> (Maybe ByteString -> GenericApplication b) -> GenericApplication b
-headerValue name f req =
-  let
-    maybeValue = lookup (CI.mk name) (requestHeaders req)
+headerValue name = headerValue' (CI.mk name)
+
+-- | Extract the value of the fist HTTP request header with a given header name
+headerValue' :: HeaderName -> (Maybe ByteString -> GenericApplication b) -> GenericApplication b
+headerValue' name f req = 
+  let 
+    maybeValue = lookup name (requestHeaders req)
   in
     f maybeValue req
