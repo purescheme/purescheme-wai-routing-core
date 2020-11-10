@@ -61,6 +61,8 @@ module Network.Wai.Routing.Purescheme.Core (
   , mapResponse
   -- ** Requests functions
   , withRequest
+  -- ** Utility functions
+  , withIO
   -- * Uri path functions
   , path
   , pathSegment

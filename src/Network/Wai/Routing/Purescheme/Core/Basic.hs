@@ -29,6 +29,7 @@ module Network.Wai.Routing.Purescheme.Core.Basic
   , completeIO
   , mapResponse
   , withRequest
+  , withIO
   )
 where
 
@@ -123,6 +124,12 @@ completeIO :: IO a -> GenericApplication a
 completeIO responseIO _ respond = do
   response <- responseIO
   respond response
+
+-- | Execute an IO Action and pass it to the provided function
+withIO :: IO a -> (a -> GenericApplication b) -> GenericApplication b
+withIO theIO f req respond = do
+  var <- theIO
+  f var req respond
 
 -- | Maps a response type to another response type
 mapResponse :: (a -> b) -> GenericApplication a -> GenericApplication b
