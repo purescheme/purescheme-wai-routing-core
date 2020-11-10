@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/purescheme/purescheme-wai-routing-core.svg?branch=master)](https://travis-ci.org/purescheme/purescheme-wai-routing-core)
 [![Hackage](https://img.shields.io/hackage/v/purescheme-wai-routing-core)](http://hackage.haskell.org/package/purescheme-wai-routing-core)
 
-*The goal of purescheme is make a simple framework for building fast microservices in haskell.*
+*The goal of purescheme is make a simple framework for building fast microservices and web applications in haskell.*
 
 This module provides simple routing functions for create rest APIs on top of a WAI server.
 
