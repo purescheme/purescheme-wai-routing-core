@@ -73,6 +73,9 @@ module Network.Wai.Routing.Purescheme.Core (
   , maybeSingleParameter
   -- * Http method 
   , method
+  -- * Http headers
+  , headerValue
+  , headerValue'
   -- * Entity based
   -- ** Entity Based types
   , EntityResponse
@@ -99,6 +102,7 @@ import Network.Wai.Routing.Purescheme.Core.Basic
 import Network.Wai.Routing.Purescheme.Core.Path
 import Network.Wai.Routing.Purescheme.Core.Query
 import Network.Wai.Routing.Purescheme.Core.Method
+import Network.Wai.Routing.Purescheme.Core.Header
 import Network.Wai.Routing.Purescheme.Core.Entity
 import Network.Wai.Routing.Purescheme.Core.Entity.Json
 
