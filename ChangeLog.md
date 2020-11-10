@@ -1,5 +1,9 @@
 # Changelog for simple-routing-core
 
+## 0.1.3.0
+
+* Include header functions in `Core` module
+
 ## 0.1.2.0
 
 * Added variant of `headerValue` that accepts `HeaderName`
